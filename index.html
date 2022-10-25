@@ -29,20 +29,21 @@
         width: 100%;
         height: 100%;
         background-image: url("./flower-center-01.png");
-        background-size: contain;
+        background-size: 80%;
         background-position: top center;
         background-repeat: no-repeat;
       }
       #home::after,
       #bride::before,
-      #bride::after {
+      #event::before,
+      #gallery::before {
         content: "";
         position: absolute;
         z-index: -1;
         width: 100%;
         height: 100%;
         background-image: url("./flower-corner-01.png");
-        background-size: contain;
+        background-size: 90%;
         background-position: bottom left;
         background-repeat: no-repeat;
       }
@@ -50,25 +51,60 @@
       #bride::before {
         transform: rotatex(180deg);
       }
-      #bride::after {
+
+      #event::before {
         transform: rotatey(180deg);
-        background-position: bottom right;
+        background-position: bottom revert;
+      }
+
+      #gallery::before {
+        transform: rotate(180deg);
       }
     </style>
   </head>
   <body class="bg-[#ffeadc]">
-    <div id="overlay" class="h-screen w-screen absolute flex flex-col items-center justify-center bg-[#ffeadc] z-10 transition duration-200 ease-out">
+    <!-- overlay -->
+    <div
+      id="overlay"
+      class="h-screen w-screen fixed flex flex-col items-center justify-center bg-[#ffeadc] z-10 transition duration-1000 ease-out"
+    >
       <div class="flex flex-col items-center">
-        <h1 class="font-['rouge_script'] font-medium text-6xl text-[#c3997b] mr-20">B</h1>
-        <h1 class="font-['rouge_script'] font-medium text-6xl text-[#c3997b] leading-[.5rem]">&</h1>
-        <h1 class="font-['rouge_script'] font-medium text-6xl text-[#c3997b] ml-20">A</h1>
-        <p class="font-medium text-sm capitalize mt-12">kepada yth.</p>
+        <div class="relative">
+          <div
+            class="flex flex-col items-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 mt-3"
+          >
+            <h1
+              class="font-['rouge_script'] font-medium text-5xl text-[#c3997b] mr-10"
+            >
+              B
+            </h1>
+            <h1
+              class="font-['rouge_script'] font-medium text-3xl text-[#c3997b] leading-[0]"
+            >
+              &
+            </h1>
+            <h1
+              class="font-['rouge_script'] font-medium text-5xl text-[#c3997b] ml-10"
+            >
+              A
+            </h1>
+          </div>
+          <img src="./border-main-01.png" width="80%" class="mx-auto" alt="" />
+        </div>
+        <p class="font-medium text-sm capitalize mt-10">kepada yth.</p>
         <p class="font-light text-sm capitalize">Bapak/Ibu/Saudara/i</p>
         <h3 class="font-medium text-xl text-[#c3997b] my-2">Tamu Undangan</h3>
         <p class="font-light text-sm capitalize">di Tempat</p>
-        <button type="button" onclick="openInvitation()" class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md mt-5 bg-[#c3997b] transition hover:scale-105">buka undangan</button>
+        <button
+          type="button"
+          onclick="openInvitation()"
+          class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md mt-5 bg-[#c3997b] transition hover:scale-105"
+        >
+          buka undangan
+        </button>
       </div>
     </div>
+    <!-- home -->
     <div id="home" class="h-screen flex flex-col items-center text-center">
       <div class="flex-1 flex flex-col items-center justify-center">
         <p
@@ -76,7 +112,9 @@
         >
           the wedding of
         </p>
-        <h1 class="font-['rouge_script'] font-medium text-8xl text-[#c3997b] leading-[4rem]">
+        <h1
+          class="font-['rouge_script'] font-medium text-8xl text-[#c3997b] leading-[4rem]"
+        >
           budi<br /><span>&</span><br />ani
         </h1>
         <p
@@ -88,34 +126,170 @@
       </div>
       <p class="text-3xl mb-5 animate-bounce">⇣</p>
     </div>
-    <div id="bride" class="h-screen flex flex-col items-center text-center">
-      <p class="text-xs mt-16 px-16 py-3 bg-[#ffffff50]">
-        Assalamu’alaikum warahmatullahi wabarakatuh Dengan memohon rahmat dan
-        ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan
-        acara pernikahan :
-      </p>
+    <!-- bride -->
+    <div id="bride">
+      <div class="flex flex-col items-center text-center py-16">
+        <p class="text-xs px-16 py-3 bg-[#ffffff50]">
+          Assalamu’alaikum warahmatullahi wabarakatuh Dengan memohon rahmat dan
+          ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan
+          menyelenggarakan acara pernikahan :
+        </p>
 
-      <div class="flex gap-3 mt-16">
-        <img src="#" class="rounded-full bg-white" width="75" height="75" alt=""></img>
-        <img src="#" class="rounded-full bg-white" width="75" height="75" alt=""></img>
-      </div>
-      <div class="flex flex-col mt-5">
-        <div>
-          <h5 class="font-['rouge_script'] font-medium text-5xl text-[#c3997b]">Ani nur janah</h5>
-          <p class="text-xs font-light mt-3">putri dari Bpk. Nama bapak<br>dan Ibu Nama ibu</p>
+        <div class="flex gap-3 mt-16">
+          <img
+            src="#"
+            class="rounded-full bg-white"
+            width="75"
+            height="75"
+            alt=""
+          />
+          <img
+            src="#"
+            class="rounded-full bg-white"
+            width="75"
+            height="75"
+            alt=""
+          />
         </div>
-        <i class="font-['rouge_script'] text-5xl">&</i>
-        <div>
-          <h5 class="font-['rouge_script'] font-medium text-5xl text-[#c3997b]">budi setyawan</h5>
-          <p class="text-xs font-light mt-3">putra dari Bpk. Nama bapak<br>dan Ibu Nama ibu</p>
+        <div class="flex flex-col mt-5">
+          <div>
+            <h2
+              class="font-['rouge_script'] font-medium text-5xl text-[#c3997b]"
+            >
+              Ani nur janah
+            </h2>
+            <p class="text-xs font-light mt-3">
+              putri dari Bpk. Nama bapak<br />dan Ibu Nama ibu
+            </p>
+          </div>
+          <i class="font-['rouge_script'] text-5xl">&</i>
+          <div>
+            <h2
+              class="font-['rouge_script'] font-medium text-5xl text-[#c3997b]"
+            >
+              budi setyawan
+            </h2>
+            <p class="text-xs font-light mt-3">
+              putra dari Bpk. Nama bapak<br />dan Ibu Nama ibu
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- event -->
+    <div id="event">
+      <!-- countdown -->
+      <div id="countdown">
+        <div class="flex flex-col items-center py-8 px-8 bg-[#ce997b]">
+          <h3
+            class="font-['rouge_script'] font-medium text-4xl capitalize text-white"
+          >
+            hitung mundur acara
+          </h3>
+          <div class="flex gap-7 items-center justify-center mt-6">
+            <h4
+              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+            >
+              00<br /><small class="text-sm font-light">hari</small>
+            </h4>
+            <h4
+              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+            >
+              00<br /><small class="text-sm font-light">jam</small>
+            </h4>
+            <h4
+              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+            >
+              00<br /><small class="text-sm font-light">menit</small>
+            </h4>
+            <h4
+              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+            >
+              00<br /><small class="text-sm font-light">detik</small>
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center py-8 px-8 pb-[4.5rem]">
+        <h3
+          class="font-['rouge_script'] font-medium text-4xl capitalize text-[#ce997b] mb-2"
+        >
+          akad nikah
+        </h3>
+        <h4 class="font-medium text-base uppercase">januari</h4>
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <h4 class="font-medium text-base uppercase">selasa</h4>
+          <hr class="h-[36px] w-px bg-black" />
+          <h4 class="font-medium text-3xl uppercase">24</h4>
+          <hr class="h-[36px] w-px bg-black" />
+          <h4 class="font-medium text-base uppercase">
+            2023<span class="opacity-0">xx</span>
+          </h4>
+        </div>
+        <p class="text-xs font-light mb-1">Pukul 09.00-10.00 WIB</p>
+        <p class="text-xs font-light capitalize">
+          masjid an-nur, sriharjo, imogiri
+        </p>
+        <a
+          href="#"
+          class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md mt-3 bg-[#c3997b]"
+        >
+          buka maps
+        </a>
+
+        <h3
+          class="font-['rouge_script'] font-medium text-4xl capitalize text-[#ce997b] mb-2 mt-8"
+        >
+          resepsi
+        </h3>
+        <h4 class="font-medium text-base uppercase">januari</h4>
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <h4 class="font-medium text-base uppercase">selasa</h4>
+          <hr class="h-[36px] w-px bg-black" />
+          <h4 class="font-medium text-3xl uppercase">24</h4>
+          <hr class="h-[36px] w-px bg-black" />
+          <h4 class="font-medium text-base uppercase">
+            2023<span class="opacity-0">xx</span>
+          </h4>
+        </div>
+        <p class="text-xs font-light mb-1">Pukul 10.00-11.00 WIB</p>
+        <p class="text-xs font-light capitalize">mojohuro, sriharjo, imogiri</p>
+        <a
+          href="#"
+          class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md mt-3 bg-[#c3997b]"
+        >
+          buka maps
+        </a>
+      </div>
+    </div>
+    <!-- gallery -->
+    <div id="gallery">
+      <div class="py-16 px-8">
+        <h3
+          class="font-['rouge_script'] font-medium text-4xl capitalize text-center text-[#ce997b]"
+        >
+          galeri
+        </h3>
+        <div class="grid grid-cols-3 gap-2 mt-5">
+          <div class="grid place-content-center rounded-md h-28 bg-white">01</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">02</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">03</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white col-span-2">04</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">05</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">06</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white col-span-2">07</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">08</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">09</div>
+          <div class="grid place-content-center rounded-md h-28 bg-white">10</div>
         </div>
       </div>
     </div>
 
     <script>
       const openInvitation = () => {
-        document.querySelector('#overlay').classList.add('-translate-y-full')
-      }
+        document.querySelector("#overlay").classList.add("-translate-y-full");
+        window.scrollTo({ top: 0 });
+      };
     </script>
   </body>
 </html>
