@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rouge+Script&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -36,7 +36,10 @@
       #home::after,
       #bride::before,
       #event::before,
-      #gallery::before {
+      #gallery::before,
+      #rsvp_wish::before,
+      #closing::before,
+      #closing::after {
         content: "";
         position: absolute;
         z-index: -1;
@@ -48,11 +51,13 @@
         background-repeat: no-repeat;
       }
 
-      #bride::before {
+      #bride::before,
+      #closing::before {
         transform: rotatex(180deg);
       }
 
-      #event::before {
+      #event::before,
+      #closing::after {
         transform: rotatey(180deg);
         background-position: bottom revert;
       }
@@ -76,7 +81,7 @@
             <h1
               class="font-['rouge_script'] font-medium text-5xl text-[#c3997b] mr-10"
             >
-              B
+              A
             </h1>
             <h1
               class="font-['rouge_script'] font-medium text-3xl text-[#c3997b] leading-[0]"
@@ -86,7 +91,7 @@
             <h1
               class="font-['rouge_script'] font-medium text-5xl text-[#c3997b] ml-10"
             >
-              A
+              B
             </h1>
           </div>
           <img src="./border-main-01.png" width="80%" class="mx-auto" alt="" />
@@ -105,33 +110,29 @@
       </div>
     </div>
     <!-- home -->
-    <div id="home" class="relative h-screen flex flex-col items-center text-center">
-      <div class="flex-1 flex flex-col items-center justify-center">
-        <p
-          class="font-['cormorant_garamond'] font-medium text-sm uppercase mb-5"
-        >
-          the wedding of
-        </p>
-        <h1
-          class="font-['rouge_script'] font-medium text-8xl text-[#c3997b] leading-[4rem]"
-        >
-          budi<br /><span>&</span><br />ani
-        </h1>
-        <p
-          class="font-['cormorant_garamond'] font-medium text-sm uppercase mt-5"
-        >
-          save the date
-        </p>
-        <h3 class="text-xl font-medium tracking-widest">24.01.2023</h3>
-      </div>
-      <p class="text-3xl mb-5 animate-bounce">⇣</p>
+    <div
+      id="home"
+      class="relative h-screen flex flex-col items-center justify-center text-center"
+    >
+      <p class="font-['cormorant_garamond'] font-medium text-sm uppercase mb-5">
+        the wedding of
+      </p>
+      <h1
+        class="font-['rouge_script'] font-medium text-8xl text-[#c3997b] leading-[4rem]"
+      >
+        ani<br /><span>&</span><br />budi
+      </h1>
+      <p class="font-['cormorant_garamond'] font-medium text-sm uppercase mt-5">
+        save the date
+      </p>
+      <h3 class="text-xl font-medium tracking-widest">24.01.2023</h3>
     </div>
     <!-- bride -->
     <div id="bride" class="relative">
       <div class="flex flex-col items-center text-center py-16">
-        <p class="text-xs px-16 py-3 bg-[#ffffff50]">
-          Assalamu’alaikum warahmatullahi wabarakatuh Dengan memohon rahmat dan
-          ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan
+        <p class="text-xs px-16 py-3">
+          Assalamu’alaikum warahmatullahi wabarakatuh<br />Dengan memohon rahmat
+          dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan
           menyelenggarakan acara pernikahan :
         </p>
 
@@ -188,22 +189,22 @@
           </h3>
           <div class="flex gap-7 items-center justify-center mt-6">
             <h4
-              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+              class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
               00<br /><small class="text-sm font-light">hari</small>
             </h4>
             <h4
-              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+              class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
               00<br /><small class="text-sm font-light">jam</small>
             </h4>
             <h4
-              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+              class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
               00<br /><small class="text-sm font-light">menit</small>
             </h4>
             <h4
-              class="font-bold text-4xl text-center capitalize text-[#ffeabc] leading-4"
+              class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
               00<br /><small class="text-sm font-light">detik</small>
             </h4>
@@ -271,18 +272,269 @@
           galeri
         </h3>
         <div class="grid grid-cols-2 gap-2 mt-10">
-          <div class="grid place-content-center rounded-md h-36 bg-white">01</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">02</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">03</div>
-          <div class="grid place-content-center rounded-md bg-white row-span-2">04</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">05</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">06</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">07</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white col-span-2">08</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">09</div>
-          <div class="grid place-content-center rounded-md h-36 bg-white">10</div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            01
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            02
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            03
+          </div>
+          <div class="grid place-content-center rounded-md bg-white row-span-2">
+            04
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            05
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            06
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            07
+          </div>
+          <div
+            class="grid place-content-center rounded-md h-36 bg-white col-span-2"
+          >
+            08
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            09
+          </div>
+          <div class="grid place-content-center rounded-md h-36 bg-white">
+            10
+          </div>
         </div>
       </div>
+    </div>
+    <!-- protocol -->
+    <div id="protocol">
+      <div class="py-16 px-8 flex flex-col items-center bg-[#ce997b]">
+        <h3
+          class="font-['rouge_script'] font-medium text-4xl capitalize text-white"
+        >
+          protokol kesehatan
+        </h3>
+        <div class="grid grid-cols-6 place-items-center gap-5 mt-5">
+          <div class="col-span-2 flex flex-col items-center text-center gap-2">
+            <div
+              class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-masker.png')] bg-cover bg-blend-difference"
+            >
+            </div>
+            <p class="text-xs capitalize">memakai masker</p>
+          </div>
+          <div class="col-span-2 flex flex-col items-center text-center gap-2">
+            <div
+              class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-cek-suhu.png')] bg-cover bg-blend-difference"
+            >
+            </div>
+            <p class="text-xs capitalize">cek temperatur</p>
+          </div>
+          <div class="col-span-2 flex flex-col items-center text-center gap-2">
+            <div
+              class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-cuci-tangan.png')] bg-cover bg-blend-difference"
+            >
+            </div>
+            <p class="text-xs capitalize">mencuci tangan</p>
+          </div>
+          <div
+            class="col-start-2 col-end-4 flex flex-col items-center text-center gap-2"
+          >
+            <div
+              class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-jaga-jarak.png')] bg-cover bg-blend-difference"
+            >
+            </div>
+            <p class="text-xs capitalize">jaga jarak</p>
+          </div>
+          <div
+            class="col-start-4 col-end-6 flex flex-col items-center text-center gap-2"
+          >
+            <div
+              class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-salaman.png')] bg-cover bg-blend-difference"
+            >
+            </div>
+            <p class="text-[.73rem] capitalize">tidak bersalaman</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- RSVP & wish -->
+    <div id="rsvp_wish" class="relative">
+      <div class="py-16 px-8">
+        <h3
+          class="font-['rouge_script'] font-medium text-4xl text-center text-[#ce997b] mb-5"
+        >
+          RSVP dan Ucapan
+        </h3>
+        <form action="" class="mb-10">
+          <label class="block mb-5">
+            <span
+              class="block text-sm font-medium capitalize text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500"
+              >name</span
+            >
+            <input
+              type="text"
+              value="nama tamu"
+              name="nama"
+              required
+              class="mt-1 block w-full px-3 py-2 bg-white border-0 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#ce997b] disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+            />
+          </label>
+          <label class="block mb-5">
+            <span
+              class="block text-sm font-medium capitalize text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500"
+              >kehadiran</span
+            >
+            <div class="flex gap-3">
+              <input
+                id="hadir"
+                class="peer/hadir hidden"
+                type="radio"
+                name="kehadiran"
+                value="hadir"
+                checked
+              />
+              <label
+                for="hadir"
+                class="flex justify-center items-center px-3 py-2 text-xs text-black bg-slate-100 capitalize rounded shadow-md mt-3 peer-checked/hadir:text-white peer-checked/hadir:bg-[#c3997b]"
+                >hadir</label
+              >
+              <input
+                id="tidak-hadir"
+                class="peer/tidak-hadir hidden"
+                type="radio"
+                name="kehadiran"
+                value="tidak hadir"
+              />
+              <label
+                for="tidak-hadir"
+                class="flex justify-center items-center px-3 py-2 text-xs text-black bg-slate-100 capitalize rounded shadow-md mt-3 peer-checked/tidak-hadir:text-white peer-checked/tidak-hadir:bg-[#c3997b]"
+                >tidak hadir</label
+              >
+              <input
+                id="belum-tahu"
+                class="peer/belum-tahu hidden"
+                type="radio"
+                name="kehadiran"
+                value="belum tahu"
+              />
+              <label
+                for="belum-tahu"
+                class="flex justify-center items-center px-3 py-2 text-xs text-black bg-slate-100 capitalize rounded shadow-md mt-3 peer-checked/belum-tahu:text-white peer-checked/belum-tahu:bg-[#c3997b]"
+                >belum tahu</label
+              >
+            </div>
+          </label>
+          <label class="block mb-5">
+            <span
+              class="block text-sm font-medium capitalize text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500"
+              >ucapan</span
+            >
+            <textarea
+              rows="5"
+              name="ucapan"
+              required
+              class="mt-1 block w-full px-3 py-2 bg-white border-0 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#ce997b] disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+            ></textarea>
+          </label>
+          <button
+            type="submit"
+            class="w-full flex justify-center items-center px-8 py-3 text-xs text-white uppercase rounded shadow-md mt-3 bg-[#c3997b]"
+          >
+            kirim
+          </button>
+        </form>
+        <h3 class="font-medium text-xl capitalize text-[#ce997b] mb-3">
+          kiriman ucapan
+        </h3>
+        <div
+          class="flex flex-col gap-5 p-2 max-h-[36rem] overflow-auto bg-[#ffffff50]"
+        >
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <h5 class="font-bold">Nama Tamu</h5>
+              <h5>28 Oktober 2022</h5>
+            </div>
+            <p class="font-light text-sm">
+              Alhamdulillah.. selamat ya semoga lancar acaranya. Barakallahu
+              laka wa baraka 'laika wa jama'a bainakuma fii khayr. Mohon maaf
+              kami belum bisa hadir. Dikarenakan jarak dan waktu.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <h5 class="font-bold">Nama Tamu</h5>
+              <h5>28 Oktober 2022</h5>
+            </div>
+            <p class="font-light text-sm">
+              Alhamdulillah.. selamat ya semoga lancar acaranya. Barakallahu
+              laka wa baraka 'laika wa jama'a bainakuma fii khayr. Mohon maaf
+              kami belum bisa hadir. Dikarenakan jarak dan waktu.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <h5 class="font-bold">Nama Tamu</h5>
+              <h5>28 Oktober 2022</h5>
+            </div>
+            <p class="font-light text-sm">
+              Alhamdulillah.. selamat ya semoga lancar acaranya. Barakallahu
+              laka wa baraka 'laika wa jama'a bainakuma fii khayr. Mohon maaf
+              kami belum bisa hadir. Dikarenakan jarak dan waktu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- closing -->
+    <div id="closing" class="relative h-screen flex flex-col items-center justify-center text-center px-16">
+        <p class="text-xs pb-3">
+          Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i
+          berkenan hadir untuk memberikan do’a restu kepada kedua mempelai.
+        </p>
+        <p class="text-xs font-medium mb-5">
+          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+          pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
+          dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+          kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
+          tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”<br />(QS.
+          Ar-Rum: 21)
+        </p>
+        <p class="text-xs">Kami yang berbahagia,</p>
+        <h2 class="font-['rouge_script'] font-medium text-3xl text-[#c3997b] mb-3">
+          Ani & Budi
+        </h2>
+        <div class="w-full flex justify-between mb-5">
+          <p class="text-xs font-light">
+            Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
+          </p>
+          <p class="text-xs font-light">
+            Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
+          </p>
+        </div>
+        <div class="grid grid-cols-4 gap-3">
+          <a
+            href="#"
+            class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+          >
+            amplop digital
+          </a>
+          <a
+            href="#"
+            class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+          >
+            simpan undangan
+          </a>
+          <a
+            href="#"
+            class="col-start-2 col-end-4 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+          >
+            tambah ke kalender
+          </a>
+        </div>
+
+        <!-- credit -->
+        <p class="text-xs absolute bottom-5">Design with ❤️ by <a href="halalinkamu.com" class="underline">halalinkamu.com</a></p>
     </div>
 
     <script>
