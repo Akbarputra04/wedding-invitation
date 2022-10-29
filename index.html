@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rouge+Script&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1/assets/css/atcb.min.css"
+    />
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
       tailwind.config = {
@@ -140,15 +144,15 @@
           <img
             src="#"
             class="rounded-full bg-white"
-            width="75"
-            height="75"
+            width="100"
+            height="100"
             alt=""
           />
           <img
             src="#"
             class="rounded-full bg-white"
-            width="75"
-            height="75"
+            width="100"
+            height="100"
             alt=""
           />
         </div>
@@ -191,22 +195,32 @@
             <h4
               class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
-              00<br /><small class="text-sm font-light">hari</small>
+              <span class="days"></span><br /><small class="text-sm font-light"
+                >hari</small
+              >
             </h4>
             <h4
               class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
-              00<br /><small class="text-sm font-light">jam</small>
+              <span class="hours"></span><br /><small class="text-sm font-light"
+                >jam</small
+              >
             </h4>
             <h4
               class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
-              00<br /><small class="text-sm font-light">menit</small>
+              <span class="minutes"></span><br /><small
+                class="text-sm font-light"
+                >menit</small
+              >
             </h4>
             <h4
               class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
-              00<br /><small class="text-sm font-light">detik</small>
+              <span class="seconds"></span><br /><small
+                class="text-sm font-light"
+                >detik</small
+              >
             </h4>
           </div>
         </div>
@@ -232,7 +246,7 @@
           masjid an-nur, sriharjo, imogiri
         </p>
         <a
-          href="#"
+          href="https://goo.gl/maps/ibGTJyWaf35QvRmQ9"
           class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md mt-3 bg-[#c3997b]"
         >
           buka maps
@@ -256,7 +270,7 @@
         <p class="text-xs font-light mb-1">Pukul 10.00-11.00 WIB</p>
         <p class="text-xs font-light capitalize">mojohuro, sriharjo, imogiri</p>
         <a
-          href="#"
+          href="https://goo.gl/maps/ibGTJyWaf35QvRmQ9"
           class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md mt-3 bg-[#c3997b]"
         >
           buka maps
@@ -319,22 +333,19 @@
           <div class="col-span-2 flex flex-col items-center text-center gap-2">
             <div
               class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-masker.png')] bg-cover bg-blend-difference"
-            >
-            </div>
+            ></div>
             <p class="text-xs capitalize">memakai masker</p>
           </div>
           <div class="col-span-2 flex flex-col items-center text-center gap-2">
             <div
               class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-cek-suhu.png')] bg-cover bg-blend-difference"
-            >
-            </div>
+            ></div>
             <p class="text-xs capitalize">cek temperatur</p>
           </div>
           <div class="col-span-2 flex flex-col items-center text-center gap-2">
             <div
               class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-cuci-tangan.png')] bg-cover bg-blend-difference"
-            >
-            </div>
+            ></div>
             <p class="text-xs capitalize">mencuci tangan</p>
           </div>
           <div
@@ -342,8 +353,7 @@
           >
             <div
               class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-jaga-jarak.png')] bg-cover bg-blend-difference"
-            >
-            </div>
+            ></div>
             <p class="text-xs capitalize">jaga jarak</p>
           </div>
           <div
@@ -351,8 +361,7 @@
           >
             <div
               class="grid place-content-center rounded-full h-20 w-20 bg-[#ffeadc] bg-[url('./icon-salaman.png')] bg-cover bg-blend-difference"
-            >
-            </div>
+            ></div>
             <p class="text-[.73rem] capitalize">tidak bersalaman</p>
           </div>
         </div>
@@ -487,61 +496,252 @@
       </div>
     </div>
     <!-- closing -->
-    <div id="closing" class="relative h-screen flex flex-col items-center justify-center text-center px-16">
-        <p class="text-xs pb-3">
-          Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i
-          berkenan hadir untuk memberikan do’a restu kepada kedua mempelai.
+    <div
+      id="closing"
+      class="relative h-screen flex flex-col items-center justify-center text-center px-16"
+    >
+      <p class="text-xs pb-3">
+        Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i
+        berkenan hadir untuk memberikan do’a restu kepada kedua mempelai.
+      </p>
+      <p class="text-xs font-medium mb-5">
+        “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+        pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
+        merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+        sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
+        (kebesaran Allah) bagi kaum yang berpikir.”<br />(QS. Ar-Rum: 21)
+      </p>
+      <p class="text-xs">Kami yang berbahagia,</p>
+      <h2
+        class="font-['rouge_script'] font-medium text-4xl text-[#c3997b] mb-3"
+      >
+        Ani & Budi
+      </h2>
+      <div class="w-full flex justify-between mb-5">
+        <p class="text-xs font-light">
+          Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
         </p>
-        <p class="text-xs font-medium mb-5">
-          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-          pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
-          dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
-          kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
-          tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”<br />(QS.
-          Ar-Rum: 21)
+        <p class="text-xs font-light">
+          Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
         </p>
-        <p class="text-xs">Kami yang berbahagia,</p>
-        <h2 class="font-['rouge_script'] font-medium text-3xl text-[#c3997b] mb-3">
-          Ani & Budi
-        </h2>
-        <div class="w-full flex justify-between mb-5">
-          <p class="text-xs font-light">
-            Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
-          </p>
-          <p class="text-xs font-light">
-            Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
-          </p>
+      </div>
+      <div class="grid grid-cols-4 gap-3">
+        <a
+          href="#"
+          class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+        >
+          amplop digital
+        </a>
+        <button
+          type="button"
+          onclick="showInvitationPreview()"
+          class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+        >
+          simpan undangan
+        </button>
+        <div class="col-start-2 col-end-4">
+          <button
+            type="button"
+            id="add-to-calendar"
+            class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+          >
+            tambah ke kalender<br />
+          </button>
+          <span class="text-[.5rem]"
+            >By
+            <a href="https://add-to-calendar-button.com/" class="underline"
+              >add-to-calendar-button</a
+            ></span
+          >
         </div>
-        <div class="grid grid-cols-4 gap-3">
-          <a
-            href="#"
-            class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
-          >
-            amplop digital
-          </a>
-          <a
-            href="#"
-            class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
-          >
-            simpan undangan
-          </a>
-          <a
-            href="#"
-            class="col-start-2 col-end-4 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
-          >
-            tambah ke kalender
-          </a>
-        </div>
+      </div>
 
-        <!-- credit -->
-        <p class="text-xs absolute bottom-5">Design with ❤️ by <a href="halalinkamu.com" class="underline">halalinkamu.com</a></p>
+      <!-- credit -->
+      <p class="text-xs absolute bottom-5">
+        Design with ❤️ by
+        <a href="halalinkamu.com" class="underline">halalinkamu.com</a>
+      </p>
     </div>
+    <!-- save invitation -->
+    <div
+      id="save-invitation"
+      class="fixed top-0 h-screen w-screen bg-[#00000090] px-6 flex flex-col justify-center hidden"
+    >
+      <div id="invitation" class="flex flex-col p-6 bg-[#ffeadc] rounded-md">
+        <p
+          class="font-['cormorant_garamond'] font-medium text-xs text-center uppercase"
+        >
+          the wedding of
+        </p>
+        <h3
+          class="font-['rouge_script'] font-medium text-4xl text-center text-[#c3997b] capitalize"
+        >
+          ani & budi
+        </h3>
+        <h3 class="text-sm font-medium tracking-widest text-center">
+          24.01.2023
+        </h3>
+        <div class="w-full flex justify-between mt-8">
+          <div>
+            <h3 class="font-medium text-sm mb-1">Akad nikah</h3>
+            <p class="font-medium text-xs capitalize">
+              selasa, 24 januari 2023
+            </p>
+            <p class="font-light text-xs capitalize">pukul 09.00-10.00 WIB</p>
+          </div>
+          <div>
+            <h3 class="font-medium text-sm mb-1">Resepsi</h3>
+            <p class="font-medium text-xs capitalize">
+              selasa, 24 januari 2023
+            </p>
+            <p class="font-light text-xs capitalize">pukul 10.00-11.00 WIB</p>
+          </div>
+        </div>
+        <p class="font-medium text-xs capitalize mt-8">kepada yth.</p>
+        <p class="font-light text-xs capitalize">Bapak/Ibu/Saudara/i</p>
+        <h3 class="font-medium text-sm text-[#c3997b]">Tamu Undangan</h3>
+        <p class="font-light text-xs capitalize">di Tempat</p>
+
+        <p class="text-xs text-center mt-8">
+          Design with ❤️ by
+          <a href="halalinkamu.com" class="underline">halalinkamu.com</a>
+        </p>
+      </div>
+      <a
+      id="save"
+        href="#"
+        class="w-full flex justify-center items-center px-8 py-3 text-xs text-white uppercase rounded shadow-md mt-3 bg-[#c3997b]"
+      >
+        simpan undangan
+      </a>
+      <button
+        type="button"
+        onclick="hideInvitationPreview()"
+        class="w-full flex justify-center items-center px-8 py-3 text-xs text-black uppercase rounded shadow-md mt-3 bg-[#ffeadc]"
+      >
+        batal
+      </button>
+    </div>
+    <!-- audio button -->
+    <button
+      type="button"
+      onclick="toggleAudio()"
+      class="fixed bottom-5 right-5 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded-full shadow-md bg-[#c3997b]"
+    >
+      a
+    </button>
+
+    <!-- html to image -->
+    <script
+      src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"
+      type="text/javascript"
+    ></script>
 
     <script>
       const openInvitation = () => {
         document.querySelector("#overlay").classList.add("-translate-y-full");
+        document.querySelector("#overlay").classList.add("hidden");
         window.scrollTo({ top: 0 });
+        toggleAudio();
+      };
+
+      const showInvitationPreview = () => {
+        document.querySelector("#save-invitation").classList.remove("hidden");
+        html2canvas(document.querySelector("#save-invitation #invitation")).then(
+          function (canvas) {
+            const saveBtn = document.querySelector("#save-invitation #save");
+            saveBtn.download = "halalinkamu-ani&budi.jpg";
+            saveBtn.href = canvas.toDataURL();
+            saveBtn.target = "_blank";
+          }
+        );
+      };
+
+      const hideInvitationPreview = () => {
+        document.querySelector("#save-invitation").classList.add("hidden");
+      };
+
+      const audio = new Audio(
+        "https://zeinvitation.com/wp-content/uploads/2022/08/Westlife-Beautiful-In-White-Saxophone-Cover-by-Saxserenade.mp3"
+      );
+      const toggleAudio = () => {
+        audio.paused ? audio.play() : audio.pause();
       };
     </script>
+
+    <!-- countdown -->
+    <script>
+      function getTimeRemaining(endtime) {
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+        return {
+          total,
+          days,
+          hours,
+          minutes,
+          seconds,
+        };
+      }
+
+      function initializeClock(id, endtime) {
+        const clock = document.getElementById(id);
+        const daysSpan = clock.querySelector(".days");
+        const hoursSpan = clock.querySelector(".hours");
+        const minutesSpan = clock.querySelector(".minutes");
+        const secondsSpan = clock.querySelector(".seconds");
+
+        function updateClock() {
+          const t = getTimeRemaining(endtime);
+
+          daysSpan.innerHTML = t.days;
+          hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+          minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+          secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+
+          if (t.total <= 0) {
+            clearInterval(timeinterval);
+          }
+        }
+
+        updateClock();
+        const timeinterval = setInterval(updateClock, 1000);
+      }
+
+      const deadline = new Date(
+        Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000
+      );
+      initializeClock("countdown", deadline);
+    </script>
+
+    <!-- add to calendar -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1"
+      async
+      defer
+    ></script>
+    <script>
+      const config = {
+        name: "halalinkamu reminder",
+        description: "the wedding of Ani & Budi",
+        startDate: "2023-01-24",
+        endDate: "2023-01-24",
+        location: "Mojohuro, Sriharjo, Imogiri",
+        label: "tambah ke kalender!",
+        options: ["Apple", "Google", "iCal", "MicrosoftTeams", "Outlook.com"],
+        timeZone: "Asia/Jakarta",
+        iCalFileName: "halalinkamu reminder",
+      };
+      // WIB : Asia/Jakarta
+      // WITA : Asia/Makassar
+      // WIT : Asia/Jayapura
+
+      const button = document.querySelector("#add-to-calendar");
+      button.addEventListener("click", () => atcb_action(config, button));
+    </script>
+
   </body>
 </html>
