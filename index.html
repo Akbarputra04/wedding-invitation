@@ -191,7 +191,7 @@
           >
             hitung mundur acara
           </h3>
-          <div class="flex gap-7 items-center justify-center mt-6">
+          <div class="flex gap-7 items-center justify-center mt-6 mb-5">
             <h4
               class="font-bold text-4xl text-center capitalize text-[#ffeadc] leading-4"
             >
@@ -223,6 +223,19 @@
               >
             </h4>
           </div>
+          <button
+            type="button"
+            id="add-to-calendar"
+            class="flex justify-center items-center px-3 py-2 text-xs rounded shadow-md bg-[#ffeadc] mb-1"
+          >
+            Tambah ke Kalender<br />
+          </button>
+          <span class="text-[.5rem]"
+            >By
+            <a href="https://add-to-calendar-button.com/" class="underline"
+              >add-to-calendar-button</a
+            ></span
+          >
         </div>
       </div>
       <div class="flex flex-col items-center py-8 px-8 pb-16">
@@ -525,35 +538,20 @@
           Kel. Bpk. Nama bapak<br />& Ibu Nama ibu
         </p>
       </div>
-      <div class="grid grid-cols-4 gap-3">
-        <a
-          href="#"
-          class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+      <div class="grid grid-flow-col auto-cols-fr gap-3">
+        <button type="button"
+          onclick="showGift()"
+          class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
         >
           amplop digital
-        </a>
+        </button>
         <button
           type="button"
           onclick="showInvitationPreview()"
-          class="col-span-2 flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+          class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
         >
           simpan undangan
         </button>
-        <div class="col-start-2 col-end-4">
-          <button
-            type="button"
-            id="add-to-calendar"
-            class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
-          >
-            tambah ke kalender<br />
-          </button>
-          <span class="text-[.5rem]"
-            >By
-            <a href="https://add-to-calendar-button.com/" class="underline"
-              >add-to-calendar-button</a
-            ></span
-          >
-        </div>
       </div>
 
       <!-- credit -->
@@ -622,6 +620,63 @@
         batal
       </button>
     </div>
+    <!-- gift -->
+    <div
+      id="gift"
+      class="fixed top-0 h-screen w-screen bg-[#00000090] px-6 flex flex-col justify-center hidden"
+    >
+      <div class="flex flex-col items-center p-6 bg-[#ffeadc] rounded-md">
+        <h3
+          class="font-medium text-xl text-[#c3997b] capitalize mb-3"
+        >
+          amplop digital
+        </h3>
+        <div class="w-full flex justify-between mb-8">
+          <div>
+            <img src="" class="rounded-full bg-white mb-1" width="50" height="50" alt="">
+            <h5 class="font-bold text-sm">Bank BRI (003)</h5>
+            <div class="flex items-center gap-1 mt-2 mb-1">
+              <p class="px-2 py-1 bg-[#ffffff50] rounded-md text-xs shadow-sm">7583728374</p>
+              <button class="flex justify-center items-center px-2 py-1 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]" onclick="copy('7583728374', this)">salin</button>
+            </div>
+            <p class="text-xs">a.n. Budi Setyawan</p>
+          </div>
+          <div>
+            <img src="" class="rounded-full bg-white mb-1" width="50" height="50" alt="">
+            <h5 class="font-bold text-sm">Bank Mandiri (004)</h5>
+            <div class="flex items-center gap-1 mt-2 mb-1">
+              <p class="px-2 py-1 bg-[#ffffff50] rounded-md text-xs shadow-sm">28364738267</p>
+              <button class="flex justify-center items-center px-2 py-1 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]" onclick="copy('28364738267', this)">salin</button>
+            </div>
+            <p class="text-xs">a.n. Budi Setyawan</p>
+          </div>
+        </div>
+        <h3
+          class="font-medium text-xl text-[#c3997b] capitalize mb-3"
+        >
+          kirim hadiah
+        </h3>
+        <p class="text-xs text-center mb-2">Bagi yang ingin memberikan hadiah kepada pengantin, silahkan dikirim ke alamat berikut :</p>
+        <button type="button" class="w-full py-2 px-3 bg-[#ffffff50] rounded-md mb-1" onclick="copy('Penerima: Budi Setyawan\nJl. Imogiri-siluk, Mojohuro, Sriharjo, Imogiri, Bantul', this)">
+          <h5 class="font-medium text-sm mb-1">Penerima: Budi Setyawan</h5>
+          <p class="text-xs font-light">Jl. Imogiri-siluk, Mojohuro, Sriharjo, Imogiri, Bantul</p>
+        </button>
+        <label class="text-xs mb-5">* klik untuk menyalin</label>
+        <a
+          href="#"
+          class="flex justify-center items-center px-3 py-2 text-xs text-white capitalize rounded shadow-md bg-[#c3997b]"
+        >
+          konfirmasi WA
+        </a>
+      </div>
+      <button
+        type="button"
+        onclick="hideGift()"
+        class="w-full flex justify-center items-center px-8 py-3 text-xs text-black uppercase rounded shadow-md mt-3 bg-[#ffeadc]"
+      >
+        tutup
+      </button>
+    </div>
     <!-- audio button -->
     <button
       type="button"
@@ -630,6 +685,11 @@
     >
       a
     </button>
+    <!-- alert -->
+    <div id="alert" class="flex items-center gap-3 py-2 px-3 bg-white rounded shadow-md fixed top-5 right-5 transition duration-1000 -translate-y-16">
+      <p id="alert-content" class="text-xs"></p>
+      <button type="button" onclick="hideAlert()">✕</button>
+    </div>
 
     <!-- html to image -->
     <script
@@ -660,6 +720,31 @@
       const hideInvitationPreview = () => {
         document.querySelector("#save-invitation").classList.add("hidden");
       };
+
+      const showGift = () => {
+        document.querySelector('#gift').classList.remove('hidden')
+      }
+
+      const hideGift = () => {
+        document.querySelector('#gift').classList.add('hidden')
+      }
+
+      const copy = (content, elm) => {
+        navigator.clipboard.writeText(content)
+        showAlert('berhasil disalin!')
+      }
+
+      const showAlert = (content) => {
+        document.querySelector('#alert-content').textContent = content
+        document.querySelector('#alert').classList.remove('-translate-y-16')
+        setTimeout(() => {
+          hideAlert()
+        }, 5000);
+      }
+
+      const hideAlert = () => {
+        document.querySelector('#alert').classList.add('-translate-y-16')
+      }
 
       const audio = new Audio(
         "https://zeinvitation.com/wp-content/uploads/2022/08/Westlife-Beautiful-In-White-Saxophone-Cover-by-Saxserenade.mp3"
